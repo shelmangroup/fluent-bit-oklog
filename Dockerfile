@@ -36,8 +36,9 @@ RUN apk --no-cache --virtual .build-deps add \
 # Configuration files
 COPY fluent-bit.conf /fluent-bit/etc/
 COPY parsers.conf /fluent-bit/etc/
+COPY run.sh /run.sh
 
 # Entry point
-CMD ["/fluent-bit/bin/fluent-bit", "-c", "/fluent-bit/etc/fluent-bit.conf"]
+CMD ["/run.sh"]
 
 
